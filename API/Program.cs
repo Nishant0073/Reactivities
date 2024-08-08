@@ -25,7 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(corsBuilder => corsBuilder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
 app.UseAuthorization();
 
 app.MapControllers();
